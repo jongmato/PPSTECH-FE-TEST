@@ -27,6 +27,7 @@ module.exports = {
         'logo-white': "url('../public/images/logo_gasc_white.svg')",
         'logo-color-1': "url('../public/images/GASC_Logo_color_1.svg')",
         'logo-color-2': "url('../public/images/GASC_Logo_color_2.svg')",
+        'klaytn-logo': "url('../public/images/Klaytn_Logo.jpeg')",
       },
     },
   },
