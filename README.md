@@ -5,7 +5,7 @@
 
 ## 사용법
 
--설치
+- 설치
 
 ```shell
 npm install 
