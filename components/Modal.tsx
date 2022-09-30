@@ -1,13 +1,11 @@
 import Portal from './Portal';
-import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { combineClassName } from '../utils';
 
 const Modal = (): JSX.Element => {
   const [quantity, setQuantity] = useState<number>(0);
   const [amount, setAmount] = useState<number>(0);
   const [roleType, setRoleType] = useState<string>('-');
-  const inputRef = useRef<HTMLInputElement>(null);
   const handleChangeQuantity = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     setQuantity(parseInt(e.currentTarget.value));
@@ -42,9 +40,7 @@ const Modal = (): JSX.Element => {
         <div className="flex h-[609px] w-[956px] rounded-[20px] border-4 border-[#5450D3] bg-white">
           <section className="h-full w-[355px] pt-10 pl-12 pb-12">
             <div className="flex h-full w-full flex-col justify-start">
-              <div className="mb-[27px] h-[59px]">
-                <Image src="/images/GASC_Logo_color_1.svg" width="160" height="59" alt="Logo" />
-              </div>
+              <div className="mb-[27px] aspect-auto h-[59px] w-40 bg-logo-color-1 bg-cover bg-no-repeat object-cover"></div>
               <p className="ml-1 mb-3 h-fit font-poppins text-sm font-bold leading-[21px] tracking-[-0.3px] text-[#2E313D]">
                 Minting Block Number
               </p>
@@ -168,7 +164,6 @@ const Modal = (): JSX.Element => {
                   <div className="flex">
                     <div className="range-slider relative h-4 w-[258px] rounded-[12px]">
                       <input
-                        ref={inputRef}
                         id="quantity"
                         className="mr-2 h-4 w-[258px] appearance-none rounded-[12px] bg-[#F5F7FF] transition-colors duration-200 ease-in"
                         style={{
@@ -213,9 +208,7 @@ const Modal = (): JSX.Element => {
                   Price
                 </p>
                 <div className="mb-9 flex">
-                  <div className="h-9 w-9 bg-transparent">
-                    <Image src={'/images/Klaytn_Logo.jpeg'} width="36" height="36" alt="Klaytn Logo" />
-                  </div>
+                  <div className="aspect-auto h-9 w-9 bg-transparent  bg-klaytn-logo bg-cover bg-no-repeat object-cover"></div>
                   <span className="font-poppins text-[40px] font-bold leading-10 tracking-[-0.3px] text-[#5450D3]">
                     400 KLAY
                   </span>
