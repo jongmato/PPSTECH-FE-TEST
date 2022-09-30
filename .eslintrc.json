@@ -1,3 +1,35 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "extends": [
+    "standard-with-typescript",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "tsx": true
+    }
+  },
+  "ignorePatterns": [
+    ".eslintrc.json",
+    "node_modules/*",
+    ".next/*",
+    "tailwind.config.js",
+    "prettier.config.js",
+    "postcss.config.js"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
 }
